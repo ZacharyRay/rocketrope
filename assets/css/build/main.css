@@ -1,0 +1,359 @@
+h1 {
+  font-size: 1.5em; }
+  @media screen and (min-width: 1020px) {
+    h1 {
+      font-size: 2em; } }
+
+p {
+  font-size: 0.8em; }
+  @media screen and (min-width: 1020px) {
+    p {
+      font-size: 1em; } }
+
+a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease; }
+
+a:hover {
+  color: tomato; }
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none; }
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none; }
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%; }
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%; }
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323; }
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2); }
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px); }
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 0;
+  padding: 50px;
+  padding-top: 125px;
+  right: -100px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px; }
+
+/*
+ * And let's fade it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: scale(1, 1);
+  opacity: 1; }
+
+body {
+  font-family: 'Baloo Paaji 2', cursive !important;
+  line-height: 1.6;
+  margin: 0 !important;
+  padding: 0;
+  background: #ffffff;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  overflow-x: hidden;
+  /* needed because hiding the menu on the right side is not perfect,  */ }
+
+a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+a:hover {
+  color: #942929; }
+
+#hero-linktree-wrapper {
+  display: flex;
+  flex-direction: column; }
+  @media screen and (min-width: 720px) {
+    #hero-linktree-wrapper {
+      flex-direction: row; } }
+  #hero-linktree-wrapper #scroll {
+    opacity: 0;
+    position: absolute; }
+    @media screen and (min-width: 1080px) {
+      #hero-linktree-wrapper #scroll {
+        display: block;
+        position: absolute;
+        z-index: 9;
+        align-self: center;
+        right: 0;
+        width: 70px;
+        transform: rotate(90deg);
+        opacity: 0.5; } }
+  #hero-linktree-wrapper #arrowdown {
+    opacity: 0;
+    position: absolute; }
+    @media screen and (min-width: 1080px) {
+      #hero-linktree-wrapper #arrowdown {
+        display: block;
+        position: absolute;
+        z-index: 9;
+        text-align: center;
+        right: 0;
+        bottom: 0;
+        width: 70px;
+        opacity: 0.5;
+        height: 40px;
+        animation: bouncing 2s infinite; } }
+  #hero-linktree-wrapper #hero-wrap {
+    margin-bottom: 10px; }
+    @media screen and (min-width: 720px) {
+      #hero-linktree-wrapper #hero-wrap {
+        width: 55vw;
+        margin: 15px; } }
+    #hero-linktree-wrapper #hero-wrap .carousel-cell {
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+      #hero-linktree-wrapper #hero-wrap .carousel-cell .video {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        height: 100%; }
+        #hero-linktree-wrapper #hero-wrap .carousel-cell .video iframe {
+          width: 100%;
+          height: 100%;
+          border-radius: 15px; }
+      @media screen and (min-width: 720px) {
+        #hero-linktree-wrapper #hero-wrap .carousel-cell {
+          border-radius: 16px; } }
+
+.flickity-page-dots {
+  bottom: 15px !important; }
+
+/* white circles */
+.flickity-page-dots .dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 0% !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  border: 1px solid white; }
+
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white !important; }
+
+/* prev and next buttons */
+.flickity-button {
+  background: transparent !important; }
+
+/* big previous & next buttons */
+.flickity-prev-next-button {
+  width: 49px !important;
+  height: 49px !important;
+  opacity: 0.1; }
+
+/* icon color */
+.flickity-button-icon {
+  fill: white !important; }
+
+/* hide disabled button */
+.flickity-button:disabled {
+  display: none !important; }
+
+#info-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 90vw;
+  height: 100%;
+  margin-top: 15px; }
+  @media screen and (min-width: 720px) {
+    #info-wrap {
+      width: 45vw;
+      margin-right: 20px; } }
+  @media screen and (min-width: 920px) {
+    #info-wrap {
+      margin-right: 0px;
+      margin-top: 0px; } }
+  #info-wrap #info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 570px; }
+    #info-wrap #info-box #text {
+      margin-bottom: 20px; }
+    #info-wrap #info-box #logo {
+      height: 100px;
+      width: 100px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 50%; }
+      @media screen and (min-width: 1020px) {
+        #info-wrap #info-box #logo {
+          height: 120px;
+          width: 120px; } }
+    #info-wrap #info-box #link-tree {
+      display: flex;
+      flex-direction: row;
+      width: 87%;
+      height: 40px;
+      align-items: center; }
+      @media screen and (min-width: 1020px) {
+        #info-wrap #info-box #link-tree {
+          width: 100%;
+          height: 60px; } }
+      #info-wrap #info-box #link-tree #icon {
+        width: 35px;
+        height: 35px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 20px; }
+      #info-wrap #info-box #link-tree #link-name {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+#shop-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 100px; }
+  @media screen and (min-width: 700px) {
+    #shop-wrapper {
+      margin-top: 100px; } }
+  #shop-wrapper #headline {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #shop-wrapper #headline h1 {
+      font-size: 2em;
+      color: #000000; }
+  #shop-wrapper .swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px; }
+  #shop-wrapper .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 21px 22px -10px rgba(0, 0, 0, 0.68); }
+    @media screen and (min-width: 500px) {
+      #shop-wrapper .swiper-slide {
+        width: 450px;
+        height: 450px; } }
+    #shop-wrapper .swiper-slide a {
+      width: 100%; }
+      #shop-wrapper .swiper-slide a #overlay {
+        width: 100%;
+        height: 70px;
+        background-color: #000000;
+        border-radius: 0px 0px 15px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff; }
+      #shop-wrapper .swiper-slide a #overlay:hover {
+        background-color: rgba(0, 0, 0, 0.7); }
+
+#social-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+@keyframes bouncing {
+  0% {
+    transform: scale(1, 1) translateY(0); }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0); }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-20px); }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0); }
+  57% {
+    transform: scale(1, 1) translateY(-3px); }
+  64% {
+    transform: scale(1, 1) translateY(0); }
+  100% {
+    transform: scale(1, 1) translateY(0); } }
+

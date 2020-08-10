@@ -1,0 +1,107 @@
+#hero-linktree-wrapper{
+  display: flex;
+  flex-direction: column;
+  @include min-screen(720px){
+    flex-direction: row;
+  }
+  #scroll {
+    opacity: 0;
+    position: absolute;
+    @include min-screen(1080px){
+      display: block;
+      position: absolute;
+      z-index: 9;
+      align-self: center;
+      right: 0;
+      width: 70px;
+      transform: rotate(90deg);
+      opacity: 0.5;
+    }
+  }
+  #arrowdown {
+    opacity: 0;
+    position: absolute;
+    @include min-screen(1080px){
+      display: block;
+      position: absolute;
+      z-index: 9;
+      text-align: center;
+      right: 0;
+      bottom: 0;
+      width: 70px;
+      opacity: 0.5;
+      height: 40px;
+      animation: bouncing 2s infinite;
+    }
+  }
+  #hero-wrap{
+    margin-bottom: 10px;
+    @include min-screen(720px){
+      width: 55vw;
+      margin: 15px;
+    }
+   
+    .carousel-cell {
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .video{
+        iframe{
+          width: 100%;
+          height: 100%;
+          border-radius: 15px;
+        }
+        position: absolute;
+        width: 100%;
+        top: 0;
+        height: 100%;
+      }
+      
+      @include min-screen(720px){
+        border-radius: 16px;
+      }
+    } 
+
+  }
+}
+
+
+
+.flickity-page-dots {
+  bottom: 15px !important;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 0% !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  border: 1px solid white;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white !important;
+}
+/* prev and next buttons */
+.flickity-button {
+  background: transparent !important;
+}
+/* big previous & next buttons */
+
+.flickity-prev-next-button {
+  width: 49px !important;
+  height: 49px !important;
+  opacity: 0.1;
+}
+/* icon color */
+.flickity-button-icon {
+  fill: white !important;
+}
+/* hide disabled button */
+.flickity-button:disabled {
+  display: none !important;
+}

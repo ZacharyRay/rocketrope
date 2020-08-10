@@ -1,0 +1,12 @@
+h1{
+    font-size: 1.5em;
+    @include min-screen(1020px){
+        font-size: 2em;
+        }
+}
+p{
+    font-size: 0.8em;
+    @include min-screen(1020px){
+    font-size: 1em;
+    }
+}
